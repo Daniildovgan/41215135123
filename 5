@@ -1,0 +1,13 @@
+#include <iostream>
+
+int main() {
+    int num;
+    std::cin >> num;
+
+    int *ptr = &num;
+    char sign = (*ptr >= 0) ? '+' : '-';
+
+    std::cout << "Знак числа: " << sign << std::endl;
+
+    return 0;
+}
