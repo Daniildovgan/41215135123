@@ -1,0 +1,43 @@
+#include <iostream>
+
+int main() {
+    char op;
+    int num1, num2;
+    int result;
+
+    std::cout << "Введіть операцію (+, -, *, /): ";
+    std::cin >> op;
+
+    std::cout << "Введіть два числа: ";
+    std::cin >> num1 >> num2;
+
+    int *ptr1 = &num1;
+    int *ptr2 = &num2;
+
+    switch (op) {
+        case '+':
+            result = *ptr1 + *ptr2;
+            break;
+        case '-':
+            result = *ptr1 - *ptr2;
+            break;
+        case '*':
+            result = *ptr1 * *ptr2;
+            break;
+        case '/':
+            if (*ptr2 != 0) {
+                result = *ptr1 / *ptr2;
+            } else {
+                std::cout << "Помилка: ділення на нуль!" << std::endl;
+                return 1;
+            }
+            break;
+        default:
+            std::cout << "Неправильна операція!" << std::endl;
+            return 1;
+    }
+
+    std::cout << "Результат: " << result << std::endl;
+
+    return 0;
+}
