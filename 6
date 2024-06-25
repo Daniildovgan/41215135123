@@ -1,0 +1,15 @@
+#include <iostream>
+
+int main() {
+    int a = 10, b = 20;
+    int *ptr_a = &a;
+    int *ptr_b = &b;
+
+    int temp = *ptr_a;
+    *ptr_a = *ptr_b;
+    *ptr_b = temp;
+
+    std::cout << "a = " << a << ", b = " << b << std::endl;
+
+    return 0;
+}
